@@ -1,0 +1,117 @@
+import headerBackground from '../assets/header.svg';
+
+const Styles = {
+  main: {
+    height: '100vh',
+    backgroundColor: "#1C1C23",
+    display: 'flex',
+    flexDirection: 'column',
+  },
+  header: {
+    backgroundImage: `url(${headerBackground})`,
+    backgroundSize: 'cover',
+    backgroundPosition: 'center',
+    height: '450px',
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'center',
+    color: '#fff',
+    textAlign: 'center',
+    width: "calc(100vw - 80px)",
+    position: 'relative',
+    top: '100px',
+    zIndex: 1,
+    fontFamily: 'IBM Plex Mono, monospace',
+  },
+  middleBackground: {
+    backgroundColor: "#000",
+    height: "120px",
+    width: "calc(100vw - 80px)",
+    display: "flex",
+    justifyContent: "center",
+    alignItems: "center",
+    marginTop: '90px',
+    position: "relative",
+  },
+  middleContainer: {
+    backgroundColor: "#131417",
+    height: "500px",
+    width: "calc(100vw - 80px)",
+    position: "relative",
+  },
+  IntroText: {
+    justifyContent: 'center',
+    display: 'flex',
+    marginRight: '60px',
+  },
+  paragraph: {
+    color: '#fff',
+    fontSize: "20px",
+    padding: '16px',
+    borderRadius: '8px',
+    textAlign: 'center',
+    fontFamily: 'Lato, sans-serif',
+    maxWidth: '1500px',
+    marginTop: '0 auto',
+  },
+  logo: {
+    justifyContent: 'center',
+    display: 'flex',
+    width: "125px",
+    height: '125px',
+  },
+  strtBtn: {
+    height: '56px',
+    marginLeft: '15px',
+  },
+  footer: {
+    backgroundColor: "#000",
+    height: "300px",
+    width: "calc(100vw - 80px)",
+    position: "relative",
+    display: 'flex',
+  },
+  leftSide: {
+    alignItems: 'center',
+    justifyContent: 'center',
+    textAlign: 'center',
+    width: "50vw",
+  },
+  paragraphTwo: {
+    color: '#fff',
+    fontSize: "18px",
+    textAlign: 'center',
+    fontFamily: 'Lato, sans-serif',
+  },
+  logoSvg: {
+    width: "125px",
+    height: '125px',
+  },
+  rightSide: {
+    display: 'flex',
+    flexDirection: 'column',
+    alignItems: 'center',
+    justifyContent: 'center',
+    padding: '20px',
+    textAlign: 'center',
+    width: "50vw",
+  },
+  link: {
+    color: 'hsl(233.33deg 9.89% 64.31%)',
+    fontSize: '12px',
+    textDecoration: 'none',
+    marginBottom: '5px',
+  },
+  paragraphThree: {
+    color: 'hsl(233.33deg 9.89% 64.31%)',
+    fontSize: '12px',
+    textDecoration: 'none',
+    marginBottom: '5px',
+  },
+  inputText: {
+    color: "white",
+    alignContent: "center",
+  },
+};
+
+export default Styles;
