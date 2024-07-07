@@ -1,8 +1,10 @@
+/* eslint-disable @typescript-eslint/ban-ts-comment */
 import React, { useState } from 'react';
 import { DataGrid, GridColDef } from '@mui/x-data-grid';
 import { Button } from '@mui/material';
 import EditDialog from './EditDialog';
 import * as XLSX from 'xlsx';
+// @ts-ignore
 import { saveAs } from 'file-saver';
 
 interface TableProps {
@@ -41,13 +43,17 @@ const DataTable: React.FC<TableProps> = ({ data, columns, setData }) => {
     saveAs(dataBlob, `table_data${fileExtension}`);
   };
 
+  const [paginationModel, setPaginationModel] = useState({ page: 0, pageSize: 7 });
+
   return (
-    <div style={{ height: 500, width: 'calc(100vw - 63px)', display: "flex", justifyContent: "center" }}>
-      <div style={{ height: 500, width: '70%', justifyContent: "center" }}>
+    <div style={{ height: 500, width: 'calc(100vw - 65px)', display: "flex", justifyContent: "center" }}>
+      <div style={{ height: 475, width: '70%', justifyContent: "center" }}>
         <DataGrid
           rows={data}
           columns={columns}
-          pageSize={5}
+          pagination
+          paginationModel={paginationModel}
+          onPaginationModelChange={(model) => setPaginationModel(model)}
           checkboxSelection
           sx={{
             '& .MuiDataGrid-root': { backgroundColor: '#1c1c1c', color: '#fff' },

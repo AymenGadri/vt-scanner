@@ -1,14 +1,15 @@
 import React, { useState, useEffect } from 'react';
 import Sidebar from '../components/Sidebar';
 import DataTable from '../components/table';
-import { TextField, Button, Box, Typography, Alert } from '@mui/material';
+import { Button, Box, Typography, Alert } from '@mui/material';
 import MainContainer from '../components/MainContainer';
 import { getDomainData, getUrlData, getIpData, getFileData } from '../services/virustotal';
 import { transformDomainData, transformUrlData, transformIpData, transformFileData, transformFileHashData } from '../services/dataTransform';
 import EditDialog from '../components/EditDialog';
+import { GridRenderCellParams } from '@mui/x-data-grid';
 
 const Home: React.FC = () => {
-  const [drawerOpen, setDrawerOpen] = useState(false);
+  const [drawerOpen, setDrawerOpen] = useState<boolean>(false);
   const [selectedType, setSelectedType] = useState<string | null>(null);
   const [inputValue, setInputValue] = useState('');
   const [file, setFile] = useState<File | null>(null);
@@ -87,7 +88,7 @@ const Home: React.FC = () => {
       setShowNoDataMessage(true);
     } catch (error) {
       console.error('Error analyzing data:', error);
-      setErrorMessage(`Error: ${error.message}`);
+      setErrorMessage(`Error: ${(error as Error).message}`);
     } finally {
       setLoading(false);
     }
@@ -130,7 +131,7 @@ const Home: React.FC = () => {
       field: 'actions',
       headerName: 'Actions',
       width: 170,
-      renderCell: (params) => (
+      renderCell: (params: GridRenderCellParams) => (
         <Box>
           <Button onClick={() => handleEdit(params.row)} color="primary">Editer</Button>
           <Button onClick={() => handleDelete(params.row.id)} color="secondary">Supprimer</Button>
@@ -145,12 +146,17 @@ const Home: React.FC = () => {
   ];
 
   return (
-    <Box display="flex" backgroundColor={"#1C1C23"}>
+    <Box    
+     sx={{
+      display: 'flex',
+      backgroundColor: '#1C1C23'
+    }}>
       <Box>
         <Sidebar onSelect={setSelectedType} drawerOpen={drawerOpen} toggleDrawer={toggleDrawer} />
       </Box>
       <Box>
         <MainContainer
+          drawerOpen={drawerOpen}
           selectedType={selectedType}
           inputValue={inputValue}
           onInputChange={handleInputChange}

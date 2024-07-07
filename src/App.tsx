@@ -1,6 +1,6 @@
 import React from 'react';
 import Home from './pages/Home';
-import { CssBaseline, Container } from '@mui/material';
+import { CssBaseline } from '@mui/material';
 
 const App: React.FC = () => {
   return (

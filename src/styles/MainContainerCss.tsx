@@ -5,7 +5,8 @@ const Styles = {
     height: '100vh',
     backgroundColor: "#1C1C23",
     display: 'flex',
-    flexDirection: 'column',
+    flexDirection: 'column' as const,
+    width:'100%',
   },
   header: {
     backgroundImage: `url(${headerBackground})`,
@@ -16,9 +17,9 @@ const Styles = {
     alignItems: 'center',
     justifyContent: 'center',
     color: '#fff',
-    textAlign: 'center',
-    width: "calc(100vw - 80px)",
-    position: 'relative',
+    textAlign: 'center' as const,
+    width: "100%",
+    position: 'relative' as const,
     top: '100px',
     zIndex: 1,
     fontFamily: 'IBM Plex Mono, monospace',
@@ -26,18 +27,18 @@ const Styles = {
   middleBackground: {
     backgroundColor: "#000",
     height: "120px",
-    width: "calc(100vw - 80px)",
+    width: "100%",
     display: "flex",
     justifyContent: "center",
     alignItems: "center",
     marginTop: '90px',
-    position: "relative",
+    position: "relative" as const,
   },
   middleContainer: {
     backgroundColor: "#131417",
     height: "500px",
-    width: "calc(100vw - 80px)",
-    position: "relative",
+    width: "100%",
+    position: "relative" as const,
   },
   IntroText: {
     justifyContent: 'center',
@@ -49,7 +50,7 @@ const Styles = {
     fontSize: "20px",
     padding: '16px',
     borderRadius: '8px',
-    textAlign: 'center',
+    textAlign: 'center' as const,
     fontFamily: 'Lato, sans-serif',
     maxWidth: '1500px',
     marginTop: '0 auto',
@@ -67,20 +68,20 @@ const Styles = {
   footer: {
     backgroundColor: "#000",
     height: "300px",
-    width: "calc(100vw - 80px)",
-    position: "relative",
+    width: "100%",
+    position: "relative" as const,
     display: 'flex',
   },
   leftSide: {
     alignItems: 'center',
     justifyContent: 'center',
-    textAlign: 'center',
+    textAlign: 'center' as const,
     width: "50vw",
   },
   paragraphTwo: {
     color: '#fff',
     fontSize: "18px",
-    textAlign: 'center',
+    textAlign: 'center' as const,
     fontFamily: 'Lato, sans-serif',
   },
   logoSvg: {
@@ -89,11 +90,11 @@ const Styles = {
   },
   rightSide: {
     display: 'flex',
-    flexDirection: 'column',
+    flexDirection: 'column' as const,
     alignItems: 'center',
     justifyContent: 'center',
     padding: '20px',
-    textAlign: 'center',
+    textAlign: 'center' as const,
     width: "50vw",
   },
   link: {
@@ -111,6 +112,7 @@ const Styles = {
   inputText: {
     color: "white",
     alignContent: "center",
+    marginBottom: '16px',
   },
 };
 

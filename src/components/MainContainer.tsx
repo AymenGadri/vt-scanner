@@ -24,19 +24,19 @@ const MainContainer: React.FC<MainContainerProps> = ({
   apiKey,
   onApiKeyChange,
   onApiKeySubmit,
-  file,
   onFileChange,
   drawerOpen,
 }) => {
   const mainContainerStyle = {
-    justifyContent: drawerOpen ? 'flex-start' : 'center',
-    width: drawerOpen ? `calc(100vw - ${drawerWidth}px)` : 'calc(100vw - 65px)',
+    justifyContent: drawerOpen ? 'center' : 'center',
+    width: drawerOpen ? `calc(100vw - 255px)` : 'calc(100vw - 80px)',
     display: 'flex',
     transition: 'width 0.3s ease',
   };
 
   if (!selectedType) {
     return (
+      <Box sx={mainContainerStyle}>
       <div style={Styles.main}>
         <div style={Styles.header}>
           <Typography variant="h5" sx={{ fontFamily: 'IBM Plex Mono, monospace', marginTop: '90px' }}>
@@ -108,6 +108,7 @@ const MainContainer: React.FC<MainContainerProps> = ({
           </div>
         </div>
       </div>
+      </Box>
     );
   }
 
@@ -146,7 +147,7 @@ const MainContainer: React.FC<MainContainerProps> = ({
         variant="contained"
         color="primary"
         onClick={onAnalyze}
-        style={{ marginTop: '0px', height: '56px', marginLeft: '15px' }}
+        style={{ marginTop: '0px', height: '56px', marginLeft: '15px', marginBottom: '16px' }}
       >
         Analyser
       </Button>

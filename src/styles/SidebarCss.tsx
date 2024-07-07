@@ -5,14 +5,14 @@ const Styles = ({
         height: '100vh', 
         backgroundColor: '#252830',
         display: 'flex',
-        flexDirection: 'column',
-        marginTop:"20px",
+        flexDirection: 'column' as const, 
+        marginTop:'20px',
         
     },
     bottomList: {
         padding: 0,
         display: 'flex',
-        flexDirection: 'column'
+        flexDirection: 'column' as const,
     },
     text: {
         color:"#fff",

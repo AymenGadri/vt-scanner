@@ -75,28 +75,26 @@ const Drawer = styled(MuiDrawer, {
 
 interface SidebarProps {
   onSelect: (type: string) => void;
+  drawerOpen: boolean;
+  toggleDrawer: (open: boolean) => (event: React.KeyboardEvent | React.MouseEvent) => void;
 }
 
-const Sidebar: React.FC<SidebarProps> = ({ onSelect }) => {
+const Sidebar: React.FC<SidebarProps> = ({ onSelect, drawerOpen, toggleDrawer }) => {
   const [selectedItem, setSelectedItem] = useState<string | null>(null);
   const theme = useTheme();
-  const [open, setOpen] = React.useState(false);
 
   const handleSelect = (item: string) => {
     setSelectedItem(item);
     onSelect(item);
-  };
-
-  const handleDrawerOpen = () => {
-    setOpen(true);
+    toggleDrawer(false);
   };
 
   const handleDrawerClose = () => {
-    setOpen(false);
+    toggleDrawer(false);
   };
 
   const handleClick = () => {
-    window.location.href = "https://www.google.com";
+    window.location.href = "https://github.com/AymenGadri/vt-scanner/archive/refs/heads/main.zip";
   };
 
   const handleClickAboutUs = () => {
@@ -106,10 +104,10 @@ const Sidebar: React.FC<SidebarProps> = ({ onSelect }) => {
   return (
     <Box sx={{ display: 'flex' }}>
       <CssBaseline />
-      <Header open={open} handleDrawerOpen={handleDrawerOpen} />
-      <Drawer variant="permanent" open={open}>
+      <Header open={drawerOpen} handleDrawerOpen={toggleDrawer(true)} />
+      <Drawer variant="permanent" open={drawerOpen} onClose={toggleDrawer(false)}>
         <DrawerHeader>
-          <IconButton sx={{ color: 'white' }} onClick={handleDrawerClose}>
+          <IconButton sx={{ color: 'white' }} onClick={toggleDrawer(false)}>
             {theme.direction === 'rtl' ? <ChevronRightIcon /> : <ChevronLeftIcon />}
           </IconButton>
         </DrawerHeader>

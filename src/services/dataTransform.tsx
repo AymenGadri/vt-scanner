@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 export interface DomainData {
   id: string;
   analysisEngine: string;
@@ -13,6 +14,13 @@ export interface UrlData {
 }
 
 export interface IpData {
+  id: string;
+  analysisEngine: string;
+  category: string;
+  result: string;
+}
+
+export interface FileData {
   id: string;
   analysisEngine: string;
   category: string;

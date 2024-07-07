@@ -4,8 +4,7 @@ import {
   IconButton, 
   Typography, 
   TextField, 
-  InputAdornment, 
-  Box, 
+  InputAdornment,  
   styled, 
   Tooltip 
 } from '@mui/material';
@@ -44,14 +43,14 @@ const handleReload = () => {
   window.location.reload();
 };
 
-const StyledTypography = styled(Typography)(({ theme }) => ({
+const StyledTypography = styled(Typography)(() => ({
   backgroundColor: '#252830',
   padding: '0.5rem 1rem',
   borderRadius: '8px',
   marginLeft: '1rem',
 }));
 
-const StyledTextField = styled(TextField)(({ theme }) => ({
+const StyledTextField = styled(TextField)(() => ({
   backgroundColor: '#252830',
   borderRadius: '8px',
   '& .MuiOutlinedInput-root': {
