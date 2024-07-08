@@ -78,7 +78,7 @@ const StyledTextField = styled(TextField)(() => ({
 
 interface HeaderProps {
   open: boolean;
-  handleDrawerOpen: () => void;
+  handleDrawerOpen: (event: React.KeyboardEvent | React.MouseEvent) => void;
 }
 
 const Header: React.FC<HeaderProps> = ({ open, handleDrawerOpen }) => {
