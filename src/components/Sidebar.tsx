@@ -89,10 +89,6 @@ const Sidebar: React.FC<SidebarProps> = ({ onSelect, drawerOpen, toggleDrawer })
     toggleDrawer(false);
   };
 
-  const handleDrawerClose = () => {
-    toggleDrawer(false);
-  };
-
   const handleClick = () => {
     window.location.href = "https://github.com/AymenGadri/vt-scanner/archive/refs/heads/main.zip";
   };
